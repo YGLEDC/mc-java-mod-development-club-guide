@@ -1,0 +1,19 @@
+site_name: MC Java Mod Development Club Guide
+
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+
+  - Development Setup:
+      - Getting Started: 01-setup/01-getting-started.md
+
+  - Beginner Tutorials:
+      - First Weapon: 02-tutorials/01-first-weapon.md
+
+  - Club Library:
+      - Weapon API: 03-library/01-weapon-api.md
+
+  - FAQ:
+      - Common Errors: 04-faq/01-common-errors.md
