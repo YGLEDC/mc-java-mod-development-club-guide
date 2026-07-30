@@ -1,19 +1,68 @@
-site_name: MC Java Mod Development Club Guide
+site_name: South Hills Minecraft Modding Club Guide
 
 theme:
   name: material
+  logo: assets/club-logo/emblem-transparent.png
+  favicon: assets/club-logo/emblem-transparent.png
+  features:
+    - navigation.footer
+    - navigation.top
+    - search.suggest
+    - search.highlight
+  palette:
+    - scheme: default
+      primary: white
+      accent: green
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: black
+      accent: light green
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+plugins:
+  - search
+
+extra:
+  generator: false
+
+extra_css:
+  - stylesheets/extra.css
 
 nav:
   - Home: index.md
+  - Foreword: foreword.md
 
-  - Development Setup:
-      - Getting Started: 01-setup/01-getting-started.md
+  - Introduction:
+      - Introduction Overview: 01-introduction/index.md
+      - Guide Handbook: 01-introduction/01-guide-handbook.md
+      - Java: 01-introduction/02-java.md
+      - Minecraft: 01-introduction/03-minecraft.md
 
-  - Beginner Tutorials:
-      - First Weapon: 02-tutorials/01-first-weapon.md
+  - Setup:
+      - Setup Overview: 02-setup/index.md
 
-  - Club Library:
-      - Weapon API: 03-library/01-weapon-api.md
+  - Activities:
+      - Activities Overview: 03-activities/index.md
+      - "Act 1: Item": 03-activities/01-item.md
+      - "Act 2: Block": 03-activities/02-block.md
+      - "Act 3: Tool": 03-activities/03-tool.md
+      - "Act 4: Entity - Mob": 03-activities/04-entity-mob.md
+
+  - Dictionary:
+      - Dictionary Home: 04-dictionary/index.md
+
+  - Helpful Links:
+      - Helpful Links Home: 05-helpful-links/index.md
 
   - FAQ:
-      - Common Errors: 04-faq/01-common-errors.md
+      - FAQ Home: 06-faq/index.md
+
+  - Mods:
+      - Mods Directory: 07-mods/index.md
+
+  - Project Cases:
+      - Project Cases Overview: 08-project-cases/index.md
