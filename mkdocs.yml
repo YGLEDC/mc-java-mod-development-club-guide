@@ -1,4 +1,5 @@
-site_name: South Hills Minecraft Modding Club Guide
+site_name: South Hills Modding Club Guide
+copyright: Copyright &copy; YGLEDC — South Hills Modding Club
 
 theme:
   name: material
@@ -9,6 +10,8 @@ theme:
     - navigation.top
     - search.suggest
     - search.highlight
+    - content.code.copy
+    - content.code.annotate
   palette:
     - scheme: default
       primary: white
@@ -26,11 +29,31 @@ theme:
 plugins:
   - search
 
+markdown_extensions:
+  - attr_list
+  - admonition
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.mark
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
 extra:
   generator: false
 
 extra_css:
   - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/diagram-zoom.js
 
 nav:
   - Home: index.md
@@ -41,6 +64,7 @@ nav:
       - Guide Handbook: 01-introduction/01-guide-handbook.md
       - Java: 01-introduction/02-java.md
       - Minecraft: 01-introduction/03-minecraft.md
+      - GitHub & Version Control: 01-introduction/04-github-version-control.md
 
   - Setup:
       - Setup Overview: 02-setup/index.md

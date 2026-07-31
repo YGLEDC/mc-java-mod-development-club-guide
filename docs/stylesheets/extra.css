@@ -49,9 +49,58 @@
 /* Respect visitors who ask their operating system to reduce motion. */
 @media (prefers-reduced-motion: reduce) {
   .md-header__button.md-logo img,
-  .md-header__button.md-logo::after {
+  .md-header__button.md-logo::after,
+  .home-hero-logo img,
+  .home-hero-logo::after {
     transition-duration: 0ms;
   }
+}
+
+/* Large animated emblem on the Home page. */
+.home-hero-logo {
+  height: clamp(9rem, 24vw, 14rem);
+  margin: 0.5rem auto 2rem;
+  position: relative;
+  width: clamp(9rem, 24vw, 14rem);
+}
+
+.home-hero-logo img,
+.home-hero-logo::after {
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.home-hero-logo img {
+  object-fit: contain;
+  transition:
+    opacity 180ms ease,
+    transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-hero-logo::after {
+  background:
+    url("../assets/club-logo/emblem-open-transparent.png")
+    center / contain no-repeat;
+  content: "";
+  opacity: 0;
+  transform: rotate(-5deg) scale(0.84);
+  transition:
+    opacity 180ms ease,
+    transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-hero-logo:hover img,
+.home-hero-logo:focus-visible img {
+  opacity: 0;
+  transform: rotate(7deg) scale(0.86);
+}
+
+.home-hero-logo:hover::after,
+.home-hero-logo:focus-visible::after {
+  opacity: 1;
+  transform: rotate(0deg) scale(1.08);
 }
 
 /*
@@ -125,9 +174,22 @@
   transform: translateX(0.2rem);
 }
 
-/* The attribution footer is empty, so it should not reserve any space. */
+/* Keep the compact author/copyright line visible below the lesson cards. */
 .md-footer-meta {
-  display: none;
+  background: transparent;
+  color: var(--md-default-fg-color--light);
+}
+
+.md-footer-meta__inner {
+  justify-content: center;
+  min-height: auto;
+  padding: 0.25rem 0.8rem 1.25rem;
+}
+
+.md-copyright {
+  color: inherit;
+  font-size: 0.68rem;
+  margin: 0;
 }
 
 /* Stack the cards in reading order when the screen is narrow. */
@@ -140,4 +202,149 @@
   .md-footer__link--next {
     grid-column: 1;
   }
+}
+
+/*
+ * Beginner-friendly reading rhythm
+ *
+ * Slightly more space between letters helps at smaller sizes, while increased
+ * line and paragraph spacing keeps longer explanations from feeling crowded.
+ * The width limit prevents readers from losing their place across long lines.
+ */
+.md-content__inner.md-typeset {
+  font-size: 0.86rem;
+  letter-spacing: 0.008em;
+  line-height: 1.75;
+  max-width: 48rem;
+}
+
+.md-typeset p,
+.md-typeset ul,
+.md-typeset ol {
+  margin-bottom: 1.05em;
+}
+
+.md-typeset h1 {
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.15em;
+}
+
+.md-typeset h2 {
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 1.8em;
+  padding-bottom: 0.25em;
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+  margin-top: 1.5em;
+}
+
+/* ==Important term== creates one calm, consistent inline highlight. */
+.md-typeset mark:not([class]) {
+  background: color-mix(in srgb, #ffd54f 52%, transparent);
+  border-radius: 0.22em;
+  box-decoration-break: clone;
+  color: inherit;
+  padding: 0.08em 0.24em;
+  -webkit-box-decoration-break: clone;
+}
+
+/*
+ * A dedicated concept box for definitions that deserve more than inline
+ * highlighting. In Markdown, use: !!! concept "Concept: Your term"
+ */
+.md-typeset .admonition.concept,
+.md-typeset details.concept {
+  border-color: #2e7d4f;
+}
+
+.md-typeset .concept > .admonition-title,
+.md-typeset .concept > summary {
+  background: color-mix(in srgb, #2e7d4f 12%, transparent);
+  font-weight: 700;
+}
+
+.md-typeset .concept > .admonition-title::before,
+.md-typeset .concept > summary::before {
+  background-color: #2e7d4f;
+}
+
+@media screen and (max-width: 44.984375em) {
+  .md-content__inner.md-typeset {
+    font-size: 0.82rem;
+    line-height: 1.7;
+  }
+}
+
+/* Mermaid diagrams stay usable at narrow widths and enlarge when selected. */
+.md-typeset .mermaid {
+  border-radius: 0.5rem;
+  cursor: zoom-in;
+  overflow-x: auto;
+  padding: 0.75rem;
+  transition: background-color 160ms ease;
+}
+
+.md-typeset .mermaid:hover,
+.md-typeset .mermaid:focus-visible {
+  background: color-mix(
+    in srgb,
+    var(--md-accent-fg-color) 6%,
+    transparent
+  );
+}
+
+.md-typeset .mermaid:fullscreen {
+  align-items: center;
+  background: var(--md-default-bg-color);
+  cursor: zoom-out;
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.md-typeset .mermaid:fullscreen svg {
+  height: auto;
+  max-height: 90vh;
+  max-width: 94vw;
+  width: auto;
+}
+
+.md-typeset mark.highlight-yellow {
+  background-color: #fff59d !important;
+  color: #000;
+  padding: 0.1em 0.25em;
+  border-radius: 0.2em;
+}
+
+.md-typeset mark.highlight-green {
+  background-color: #a5d6a7 !important;
+  color: #000;
+  padding: 0.1em 0.25em;
+  border-radius: 0.2em;
+}
+
+.md-typeset mark.highlight-blue {
+  background-color: #90caf9 !important;
+  color: #000;
+  padding: 0.1em 0.25em;
+  border-radius: 0.2em;
+}
+
+.md-typeset mark.highlight-red {
+  background-color: #ef9a9a !important;
+  color: #000;
+  padding: 0.1em 0.25em;
+  border-radius: 0.2em;
+}
+
+.md-typeset mark.highlight-purple {
+  background-color: #ce93d8 !important;
+  color: #000;
+  padding: 0.1em 0.25em;
+  border-radius: 0.2em;
 }

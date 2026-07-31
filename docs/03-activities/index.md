@@ -1,10 +1,12 @@
 # Activities
 
-Activities are the main hands-on learning portion of the guide. Each activity
-teaches a Minecraft development component by helping members create and test
-something.
+Activities are the main hands-on learning part of the guide. Each activity
+helps you learn some Minecraft development components with real progress!
 
-New activities can be added as the club progresses.
+New activities would be added as the club advances.
+
+Feel free to join our Club Activity Party and learn together! 
+> See Google Classroom for more info. 
 
 ## Activity Order
 

@@ -1,23 +1,62 @@
 # Guide Handbook
 
-> This page is a skeleton. Instructions for using the guide will be added later.
+> Learn how to use this guide.
 
-## How to Use This Website
+## Website
 
-Coming soon.
+This guide is currently hosted on the [South Hills Modding Club Guide website](https://ygledc.github.io/mc-java-mod-development-club-guide/). I recommend saving or bookmarking this website for easier access in the future.
 
-## Recommended Learning Order
+Viewing the guide in fullscreen, windowed, or on a phone could have slight differences. The instructions below are based on viewing the guide in fullscreen mode on a computer.
 
-Coming soon.
+## Directories
 
-## What Each Directory Contains
+**Directories** (a list of catalogs) are on the left of the guide. You can simply access the content of what you want.
 
-Coming soon.
+Here are some main Directories in the guide:
 
-## How Activities and the Dictionary Work Together
+- **Foreword** some words about the guide and for our club members.
+- **Introduction** explains how to use the guide and introduces some very basics of Java and
+  Minecraft.
+- **Setup** prepares the programs and project needed for mod development.
+- **Activities** teaches development through hands-on practice.
+- ...
 
-Coming soon.
+There are also **sub-directories** in each directory, and perhaps sub-directory in a sub-directory. Click the Directory Name (or ">" symbol) to see the sub-directories.
 
-## Where to Ask Questions
+Here are some sub-directories for the Directroy **Activities**:
 
-Coming soon.
+- Activities Overview
+- Act 1: Item
+- Act 2: Block
+- ...
+
+## Table of Contents
+
+**Table of Contents** (abbreviation: TOC) (a list of contents in the directory page you are currently in) are on the right of the guide. You can simply access any small content or topic by clicking them.
+
+Here are some TOCs in the directory (or sub-directory) **Foreword**:
+
+- Welcome
+- This Guide Is For Complete Beginners
+- ...
+
+## Search Function
+You can search for any content in the guide by typing key words in the **search bar** on the top right.
+
+## Color Mode
+You can switch the **color theme** of the guide by clicking the "sun" or "moon" icon next to the search bar.
+
+## Mermaid Visualization
+
+**Mermaid** is a tool that transfers instructions into diagrams. The guide uses mermaid a lot for representation of concepts and structures.
+
+```mermaid
+flowchart LR
+    A[Home] --> B[Introduction]
+    B --> C[Activities]
+```
+> This is an example of mermaid visualization. Click it to enlarge and exit.
+
+ Nice! You have understood how to use the guide.
+
+ Let's go the next page. You can do that by simply clicking the bottom-right rectangular icon **"Next - Java"**.
