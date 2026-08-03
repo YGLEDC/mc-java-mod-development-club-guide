@@ -68,6 +68,10 @@ nav:
 
   - Setup:
       - Setup Overview: 02-setup/index.md
+      - Minecraft & Launcher: 02-setup/01-minecraft-launcher.md
+      - JDK Install: 02-setup/02-jdk-install.md
+      - IntelliJ Install: 02-setup/03-intellij-install.md
+      - Template Mod Generator: 02-setup/04-template-mod-generator.md
 
   - Activities:
       - Activities Overview: 03-activities/index.md

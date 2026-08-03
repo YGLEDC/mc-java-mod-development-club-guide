@@ -282,6 +282,27 @@ flowchart LR
 
 > visualization of package vs folder
 
+## Operating System & Processor Architecture
+
+**Operating System** is the software (program) that manages your compuer such as **MacOS** and **Windows**.
+
+**Processor Architecture** matches the architecture of your processor.
+
+- For MacOS, a MacBook that uses M series chips is **AArch64**; An Intel Mac is **x64**
+- For Windows, choose **x64** for Intel or AMD processor; Choose **AArch64** if you use an ARM processor, such as a Qualcomm Snapdragon chip.
+
+> most Window computers use **x64**
+
+!!! warning
+    When you install launchers/JDKs later, if needed, you should choose the launcher/JDK version that matches your specific Operating System and Processor Architecture for best performance.
+
+    You will lose performance and have compatibility issues if installed a mismatching version.
+
+    Usually, those websites would detect your Operating System (and Processor Architecture sometimes). However, you should always double check! 
+    
+    Try search "How to check your processor architecture" in the browser if you don't know.
+
+
 Nice! You've understood some basics of Java, this step is crucial because it can make your experience easier with reading java documentations. 
 
 **Let's Go!**
