@@ -42,7 +42,7 @@ You can change the Mod Name later, but choosing a clear name now will help keep 
 
 ### Mod ID
 
-**Mod ID** is the unique identifier that Minecraft and Fabric use internally to recognize your mod.
+**Mod ID** is the unique identifier that Minecraft and Fabric use internally to recognize your mod. It also helps prevent conflicts with other mods.
 
 Think of how the school system recognizes you with your Student ID.
 
@@ -50,7 +50,7 @@ Unlike the Mod Name, the Mod ID should:
 
 - Use lowercase letters, numbers, underscores, or hyphens
 - Contain no spaces
-- Be short and unique
+- Be short and UNIQUE
 - Describe your mod
 
 For example:
@@ -86,14 +86,14 @@ It is recommended to define your Mod Name and Mod ID from the beginning.
 
 **Package Name** is the name of your **package**. It organizes your Java classes, and prevents them from conflicting with classes from other mods.
 
-Similarly, Google Map would be confused if two location have identcal address. So, your package name should be unique to prevent conflicting issues.
+Similarly, Google Map would be confused if two location have identical address. So, your package name should be unique to prevent conflicting issues.
 
 A Package Name should:
 
 - Use lowercase letters
 - Separate each section with a period
 - Contain no spaces or hyphens
-- Be unique to you
+- Be UNIQUE to you
 - Usually starts with "com." (a convention in package naming)
 - Usually, avoid underscores (a convention in package naming)
 - Package Name doesn't need to be as the same as Mod ID
@@ -232,6 +232,40 @@ Above is an example template created with the following configurations:
 Now, you should enter a page like this:
 
 ![Setup Example](../assets/images/setup/sample_setup.png "Setup Example")
+
+##  SDK Check
+
+Now, we need to check if IntelliJ uses the correct JDK we've inatlled. 
+
+> If you use a different JDK than the guide, make sure it is JDK 21. 
+
+- Click the **Setting Icon** in the Top Right Corner, and click **Project Structure**:
+
+![Setting](../assets/images/setup/setting.png "Setting"){ width="400" }
+
+- Then, select **Project** and confirm that it uses JDK 21 in **SDK**.
+
+![project structure](../assets/images/setup/project_structure.png "Project Structure")
+
+> Windows and MacOS may have slight differences in display
+
+> If it doesn't show something related to JDK 21, you would have to manually select. You can either click the drop down icon (it should contain a list of **Detected SDKs**), or click **Edit** to choose the path. Remember to click **OK** to save changes.
+
+> Again, path/display name could have slight differences between Windows and MacOS, since need to install different versions of JDK 21 for different Operating Systems
+
+##  Gradle JVM Check
+
+- Then, click the **Setting Icon** again, and click **Settings**:
+
+![settings](../assets/images/setup/settings.png "settings"){ width="400" }
+
+- Select **Gradle** under **Build, Execution, Deployment** -> **Build Tools** -> **Maven** -> **Gradle**, and scroll down. Then, check **Gradle JVM**. It should use the same **SDK** that you've checked in the previous step:
+
+![gradle sdk](../assets/images/setup/gradle_sdk.png "Gradle SDK"){ width="700" }
+
+- Click **OK** to save changes.
+
+> It is recommended to check both SDK and Gradle JVM before starting your mod project every time!
 
 You've gone this far! Nice job.
 

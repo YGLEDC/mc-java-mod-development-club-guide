@@ -348,3 +348,9 @@
   padding: 0.1em 0.25em;
   border-radius: 0.2em;
 }
+
+/* Keep enlarged Minecraft textures crisp instead of smoothing their pixels. */
+.pixel-art {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}

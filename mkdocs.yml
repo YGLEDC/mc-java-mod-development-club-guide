@@ -86,11 +86,14 @@ nav:
   - Helpful Links:
       - Helpful Links Home: 05-helpful-links/index.md
 
+  - Credits:
+      - Credits Home: 06-credits/index.md
+
   - FAQ:
-      - FAQ Home: 06-faq/index.md
+      - FAQ Home: 07-faq/index.md
 
   - Mods:
-      - Mods Directory: 07-mods/index.md
+      - Mods Directory: 08-mods/index.md
 
   - Project Cases:
-      - Project Cases Overview: 08-project-cases/index.md
+      - Project Cases Overview: 09-project-cases/index.md
