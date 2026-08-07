@@ -12,7 +12,9 @@ We will choose **Temurin JDK 21** for mod development.
 
 ![Picture of Temurin JDK 21](../assets/images/setup/termin_download.png "Temurin JDK 21")
 
-- Choose your matching Operating System (MacOS / Window)
+- Choose your matching [**Operating System** & **Processor Architecture**](../01-introduction/02-java.md#operating-system-processor-architecture)
+
+> Usually, some JDK websites automatically detect them for you
 
 > If you use a Linux System, reach out to the officers for discussion
 

@@ -91,12 +91,14 @@ Similarly, Google Map would be confused if two location have identical address. 
 A Package Name should:
 
 - Use lowercase letters
-- Separate each section with a period
+- Separate each level/section with a period "."
 - Contain no spaces or hyphens
 - Be UNIQUE to you
-- Usually starts with "com." (a convention in package naming)
+- Usually starts with "com" (a convention in package naming)
 - Usually, avoid underscores (a convention in package naming)
 - Package Name doesn't need to be as the same as Mod ID
+
+> you will know what "convention" means at the bottom of this section
 
 A common format is:
 
@@ -149,7 +151,10 @@ The **Advanced Options** change how the generated project is configured and orga
 
 ![Advance Option](../assets/images/setup/advance_option.png "Advance Option"){ width="800" }
 
-> Check the two boxes as shown in the image above; They are our default settings for most of our projects.
+!!!warning
+    Check ONLY the two boxes as shown in the image above; They are our default settings for most of our projects.
+
+    Unless specified, always check the two boxes when you generate a template for the **Activities**.
 
 > We will not learn options related to Kotlin at this point.
 
@@ -224,6 +229,9 @@ Above is an example template created with the following configurations:
 - Version: 1.21.1
 - Advance Option: Check only "Data Generation" and "Split client and common sources"
 
+!!!tip
+    When you create a template, have a separate piece of paper out (or a doc opened), and write your mod's info on it, including your Mod Name, Mod ID, and Package Name. This would greatly help you recognize code later in complex structures.
+
 - Open IntelliJ
 - Select **Open** at the top right corner
 - Choose the **Folder** and click open
@@ -232,6 +240,10 @@ Above is an example template created with the following configurations:
 Now, you should enter a page like this:
 
 ![Setup Example](../assets/images/setup/sample_setup.png "Setup Example")
+
+> After getting in, you should wait for a few seconds to let it download some necessary tools
+
+> This process is automatic; your ".gradle" and "build" on the left may turn orange, indicating it's finished
 
 ##  SDK Check
 
@@ -266,6 +278,87 @@ Now, we need to check if IntelliJ uses the correct JDK we've inatlled.
 - Click **OK** to save changes.
 
 > It is recommended to check both SDK and Gradle JVM before starting your mod project every time!
+
+##  Brief Project Structure
+
+> This is only a brief introduction to the Structure of the loaded template in IntelliJ; you will gradually learn the structure through **Activities**
+
+Here is a view of the project structure in your left panel:
+
+![left pannel](../assets/images/setup/left_panel.png "Left Pannel"){ width="700" }
+
+!!!tip
+    Your directories might be "compacted". This is because IntelliJ sometimes check "compact middle packages". If this bothers you in creating new directories/files in **Activities**, you can click the **3 vertical dots** at the top of the left pannel, click **Appearance**, and uncheck **Compact Middle Packages**.
+
+### Gradle
+
+**Gradle** is the ultimate tool that comes with the template. 
+
+It helps build and run your mob by:
+
+- Download Minecraft, Fabric, necessary Libraries
+- Compiles your Java Source Code (**Compiler**)
+- Build checkpoints for your Mod
+- Package your mod into ".jar" file for download
+
+### src
+
+**src** stands for **Source Code**. You will put most of your Java code in this directory. 
+
+![src](../assets/images/setup/src.png "src"){ width="400" }
+
+> we will talk about some of the components of src below
+
+### Client vs Main
+
+This is where the checkbox of **"Split Client and Common Sources"** works. 
+
+It splits into two directories:
+
+-  **Main** : Contains code for both client and server
+- **Client** : Contains client-only code
+
+We will code in **Main** in the beginning for a long time, so just don't care about **Client** for now.
+
+### src/main/java
+
+See src/main/java, the directory levels after "java" is "com/ygledc/icecream".
+
+In fact, the directory structure **"com/ygledc/icecream"** actually matches the Mod Package Name **"com.ygledc.icecream"** we've configured earlier when we generate the template.
+
+The generator automatically creates this structure based on our Mod Package Name.
+
+You will basically create java programs for your mod in "src/main/java/Mod.Package.Name/".
+
+Note that the "java" here in src/main/java, represents the starting location, which is called **source root** in our mod project. This is recognized by **Gradle**. Everything under src/main/java is considered inside your mod's **Main Java Package**. Any Java file under this location would need a **Package Declaration**.
+
+> **Package Declaration**: it is like telling Java the **address** of the java file; the address should match its location.
+
+### mixin
+
+For now, just have an idea that **mixin** stores **mixin classes** that modifies Minecraft existing code.
+
+### Java Class - IceCream.java
+
+You can find a java file named "IceCream" at src/main/java/com/ygledc/icecream/.
+
+> The full name is actually **IceCream.java**, but IntelliJ recognizes a class in it, so IntelliJ turns it into the icon "C", representing "Java Class", with only the name left "IceCream".
+
+This is your mod's **main Java class**, generated by the template as well.
+
+It serves as the **entry-point class** (entry point). In other words, it is the initializer of your mod. Think of it as a front door or a starting point to your mod's content. 
+
+Here is an image representing the role of an **entry-point class**:
+
+```java
+Minecraft starts
+        ↓
+IceCream.java //(entry point)
+        ↓
+onInitialize() runs //(method)
+        ↓
+    Your Code
+```
 
 You've gone this far! Nice job.
 

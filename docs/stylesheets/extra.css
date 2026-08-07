@@ -253,6 +253,11 @@
   -webkit-box-decoration-break: clone;
 }
 
+/* Keep ==highlighted text== readable against the dark theme. */
+[data-md-color-scheme="slate"] .md-typeset mark:not([class]) {
+  background: color-mix(in srgb, #ffd54f 24%, transparent);
+}
+
 /*
  * A dedicated concept box for definitions that deserve more than inline
  * highlighting. In Markdown, use: !!! concept "Concept: Your term"

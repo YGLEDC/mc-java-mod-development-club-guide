@@ -60,40 +60,42 @@ nav:
   - Foreword: foreword.md
 
   - Introduction:
-      - Introduction Overview: 01-introduction/index.md
+      - Overview: 01-introduction/index.md
       - Guide Handbook: 01-introduction/01-guide-handbook.md
       - Java: 01-introduction/02-java.md
       - Minecraft: 01-introduction/03-minecraft.md
       - GitHub & Version Control: 01-introduction/04-github-version-control.md
 
   - Setup:
-      - Setup Overview: 02-setup/index.md
+      - Overview: 02-setup/index.md
       - Minecraft & Launcher: 02-setup/01-minecraft-launcher.md
       - JDK Install: 02-setup/02-jdk-install.md
       - IntelliJ Install: 02-setup/03-intellij-install.md
       - Template Mod Generator: 02-setup/04-template-mod-generator.md
 
   - Activities:
-      - Activities Overview: 03-activities/index.md
+      - Overview: 03-activities/index.md
       - "Act 1: Item": 03-activities/01-item.md
       - "Act 2: Block": 03-activities/02-block.md
       - "Act 3: Tool": 03-activities/03-tool.md
       - "Act 4: Entity - Mob": 03-activities/04-entity-mob.md
 
   - Dictionary:
-      - Dictionary Home: 04-dictionary/index.md
+      - Overview: 04-dictionary/index.md
 
   - Helpful Links:
-      - Helpful Links Home: 05-helpful-links/index.md
+      - Overview: 05-helpful-links/index.md
 
   - Credits:
-      - Credits Home: 06-credits/index.md
+      - Overview: 06-credits/index.md
+      - Third-Party Resources: 06-credits/01-third-party-resources.md
+      - Club Artist Contributions: 06-credits/02-club-artist-contributions.md
 
   - FAQ:
-      - FAQ Home: 07-faq/index.md
+      - Overview: 07-faq/index.md
 
   - Mods:
       - Mods Directory: 08-mods/index.md
 
   - Project Cases:
-      - Project Cases Overview: 09-project-cases/index.md
+      - Overview: 09-project-cases/index.md

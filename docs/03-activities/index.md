@@ -10,7 +10,7 @@ Feel free to join our Club Activity Party and learn together!
 
 ## Activity Order
 
-1. Act 1: Item
-2. Act 2: Block
-3. Act 3: Tool
-4. Act 4: Entity - Mob
+1. [Act 1: Item](01-item.md)
+2. [Act 2: Block](02-block.md)
+3. [Act 3: Tool](03-tool.md)
+4. [Act 4: Entity - Mob](04-entity-mob.md)

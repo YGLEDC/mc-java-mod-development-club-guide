@@ -14,7 +14,7 @@ Click this link: [IntelliJ Website](https://www.jetbrains.com/idea/), which will
 
 Click **Download**.
 
-Then, choose your **Operating System** and the download option that macthes your **Processor Architecture**.
+Then, choose your [**Operating System** & **Processor Architecture**](../01-introduction/02-java.md#operating-system-processor-architecture).
 
 > Usually, IntelliJ automatically detects them for you
 

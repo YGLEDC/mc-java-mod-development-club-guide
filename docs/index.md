@@ -23,7 +23,7 @@ This is the home page for the guide. If you are new to this guide, read the belo
 - **Activities** : teaches development through hands-on practice.
 - **Dictionary** : a collection of concepts, definitions, and general development methods.
 - **Helpful Links** : a collection of resources and website links used or recommended by the guide.
-- **Credits** : attribution for third-party images and art resources contributed by club artists.
+- **Credits** : information for third-party images and art resources contributed by club artists.
 - **FAQ** : a collection of questions from club members.
 - **Mods** : exhibition/introduction of mods created by club members.
 - **Project Cases** : documented mod cases for collaborative club projects.

@@ -27,4 +27,4 @@ You will need a Microsoft Account when you purchase Minecraft.
 If you are still confused, follow this video: [**Download & Install Minecraft On PC**](https://www.youtube.com/watch?v=3fXoRKwTjJ8), or reach out to officers and other members for help.
 
 !!! warning
-    When you install launchers, you should choose the launcher version corresponding with your **Operating System** (MacOs, Window, etc.)
+    When you install launchers, if applied / asked, you should choose the launcher version corresponding with your [**Operating System** & **Processor Architecture**](../01-introduction/02-java.md#operating-system-processor-architecture).

@@ -1,6 +1,6 @@
 # GitHub & Version Control
 
-> Nothing on this page yet.
+> No need to learn GitHub yet! You can skip this and go to **Setup**.
 
 > This page will be updated soon.
 
