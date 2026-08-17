@@ -54,6 +54,8 @@ extra_css:
 
 extra_javascript:
   - javascripts/diagram-zoom.js
+  - javascripts/search-preview.js
+  - javascripts/search-jump.js
 
 nav:
   - Home: index.md

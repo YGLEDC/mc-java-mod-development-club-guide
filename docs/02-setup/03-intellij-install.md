@@ -22,4 +22,6 @@ Then, choose your [**Operating System** & **Processor Architecture**](../01-intr
 
 It should take a few seconds. After successfully downloaded, click the downloaded file in your **Download**, and follow its instructions to install.
 
+-----
+
 Now, we will continue to **Template Mod Generator**. After generating the project, you will open it in **IntelliJ IDEA**.

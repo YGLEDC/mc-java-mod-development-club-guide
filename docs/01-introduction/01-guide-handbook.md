@@ -57,6 +57,25 @@ flowchart LR
 ```
 > This is an example of mermaid visualization. Click it to enlarge and exit.
 
- Nice! You have understood how to use the guide.
+## Replacement "<...>"
 
- Let's go the next page. You can do that by simply clicking the bottom-right rectangular icon **"Next - Java"**.
+There would be many code templates for you in **Activities**. Usually, the guide uses "<>" sign to tell you where to replace something. For example:
+
+```json
+{
+"item.<mod-id>.<item_path>": "<Name of Item That You Want to Appear In English Language>"
+}
+```
+After replacing, for example, would be something like:
+```json
+{
+"item.ice-cream.ice_cream_ingot": "Ice Cream Ingot"
+}
+```
+However, sometimes, you would also need to include "<>" in some code, but don't worry about this! There would also be sample code for you to refer and check your own. 
+
+------
+
+Nice! You have understood how to use the guide.
+
+Let's go the next page. You can do that by simply clicking the bottom-right rectangular icon **"Next - Java"**.

@@ -73,3 +73,5 @@ However, you can also choose to start develop mods because you can play a Minecr
 If this is the thing you want to do, it won't be too late to jump in then. 
 
  More info about downloading Minecraft is in the **Setup** Directory.
+
+-----

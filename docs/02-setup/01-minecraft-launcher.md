@@ -28,3 +28,5 @@ If you are still confused, follow this video: [**Download & Install Minecraft On
 
 !!! warning
     When you install launchers, if applied / asked, you should choose the launcher version corresponding with your [**Operating System** & **Processor Architecture**](../01-introduction/02-java.md#operating-system-processor-architecture).
+
+-----

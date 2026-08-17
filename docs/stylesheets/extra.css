@@ -245,7 +245,7 @@
 
 /* ==Important term== creates one calm, consistent inline highlight. */
 .md-typeset mark:not([class]) {
-  background: color-mix(in srgb, #ffd54f 52%, transparent);
+  background: color-mix(in srgb, #ffd54f 30%, transparent);
   border-radius: 0.22em;
   box-decoration-break: clone;
   color: inherit;
@@ -255,7 +255,138 @@
 
 /* Keep ==highlighted text== readable against the dark theme. */
 [data-md-color-scheme="slate"] .md-typeset mark:not([class]) {
-  background: color-mix(in srgb, #ffd54f 24%, transparent);
+  background: color-mix(in srgb, #ffd54f 16%, transparent);
+}
+
+/* Make the exact match selected from a search result immediately noticeable. */
+.md-content mark[data-md-highlight].search-jump-target {
+  animation: search-jump-pulse 1.2s ease-out 1;
+  outline: 0.14rem solid var(--md-accent-fg-color);
+  outline-offset: 0.12rem;
+}
+
+@keyframes search-jump-pulse {
+  from {
+    box-shadow: 0 0 0 0.45rem color-mix(in srgb, var(--md-accent-fg-color) 35%, transparent);
+  }
+  to {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .md-content mark[data-md-highlight].search-jump-target {
+    animation: none;
+  }
+}
+
+/* Compact search cards inspired by the textbook's find interface. */
+@media screen and (min-width: 60em) {
+  .md-search {
+    max-width: 43rem;
+  }
+}
+
+.md-search-result__list {
+  display: grid;
+  gap: 0.55rem;
+  padding: 0.65rem;
+}
+
+.md-search-result__item {
+  margin: 0;
+}
+
+.md-search-result__link {
+  background: color-mix(in srgb, var(--md-default-fg-color) 5%, var(--md-default-bg-color));
+  border: 1px solid transparent;
+  border-radius: 0.55rem;
+  overflow: hidden;
+  transition: background-color 140ms ease, border-color 140ms ease, transform 140ms ease;
+}
+
+.md-search-result__link:hover,
+.md-search-result__link:focus-visible {
+  background: color-mix(in srgb, var(--md-accent-fg-color) 12%, var(--md-default-bg-color));
+  border-color: var(--md-accent-fg-color);
+  transform: translateY(-1px);
+}
+
+.md-search-result__article.search-card {
+  align-items: center;
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: 1.45rem minmax(0, 1fr);
+  min-height: 4.2rem;
+  padding: 0.7rem 0.85rem;
+}
+
+.search-card__icon {
+  color: var(--md-default-fg-color--light);
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+}
+
+.search-card--page .search-card__icon {
+  border: 0.1rem solid currentColor;
+  border-radius: 0.12rem;
+  height: 1.15rem;
+  justify-self: center;
+  position: relative;
+  width: 0.9rem;
+}
+
+.search-card--page .search-card__icon::after {
+  background: var(--md-default-bg-color);
+  border-bottom: 0.08rem solid currentColor;
+  border-left: 0.08rem solid currentColor;
+  content: "";
+  height: 0.28rem;
+  position: absolute;
+  right: -0.08rem;
+  top: -0.08rem;
+  width: 0.28rem;
+}
+
+.search-card__body {
+  min-width: 0;
+}
+
+.search-card__page {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.64rem;
+  line-height: 1.35;
+  margin-bottom: 0.1rem;
+}
+
+.search-card__title {
+  color: var(--md-default-fg-color);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.search-card__snippet {
+  color: var(--md-default-fg-color--light);
+  display: -webkit-box;
+  font-size: 0.68rem;
+  line-height: 1.45;
+  margin: 0.22rem 0 0;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.search-card mark {
+  background: transparent;
+  color: var(--md-accent-fg-color);
+  font-weight: 700;
+}
+
+.search-card--page .search-card__title {
+  font-size: 0.88rem;
 }
 
 /*

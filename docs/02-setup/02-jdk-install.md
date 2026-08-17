@@ -41,4 +41,6 @@ It should have something like this (below is an example of **MacOS**):
 
 > We can specify the JDK used later in IntelliJ, so no worries if it doesn't show the correct version.
 
+-----
+
 Nice Job!

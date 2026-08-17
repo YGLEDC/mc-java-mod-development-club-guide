@@ -325,6 +325,8 @@ We will follow the following naming conventions in our development:
 
 > Don't worry if you don't understand some of the terms in the convention yet, feel free to go back here after you learn the terms, and need to name them.
 
+-----
+
 Nice! You've understood some basics of Java, this step is crucial because it can make your experience easier with reading java documentations. 
 
 **Let's Go!**

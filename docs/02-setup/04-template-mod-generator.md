@@ -290,6 +290,10 @@ Here is a view of the project structure in your left panel:
 !!!tip
     Your directories might be "compacted". This is because IntelliJ sometimes check "compact middle packages". If this bothers you in creating new directories/files in **Activities**, you can click the **3 vertical dots** at the top of the left pannel, click **Appearance**, and uncheck **Compact Middle Packages**.
 
+### Open a file or folder
+
+You might need to **double click** to open a specific file or folder; **Single Click** would only select the file or folder.
+
 ### Gradle
 
 **Gradle** is the ultimate tool that comes with the template. 
@@ -359,6 +363,8 @@ onInitialize() runs //(method)
         ↓
     Your Code
 ```
+
+------
 
 You've gone this far! Nice job.
 
