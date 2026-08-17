@@ -827,7 +827,7 @@ Here is mine:
 }
 ```
 
-### Textures JSON
+### Textures PNG
 
 * ==Create a new directory named **textures** in src/main/resources/assets/mod-id, where mod-id represents your Mod ID. You can do that by clicking your **mod-id** directory, and click the "+" icon at the top, and select directory.==
 
