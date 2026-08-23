@@ -6,4 +6,4 @@ Club artists may contribute original artwork for use in the guide. Before using 
 
 | Artist | Artist link | Resources | Contributions | Permission or terms |
 | --- | --- | --- | --- | --- |
-| Rosa | — | — | — | — | - |
+| Rosa | — | — | — | Club Guide Use Only |

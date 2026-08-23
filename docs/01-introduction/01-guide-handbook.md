@@ -27,7 +27,8 @@ Here are some sub-directories for the Directroy **Activities**:
 
 - Activities Overview
 - Act 1: Item
-- Act 2: Block
+- Act 2: Item Features 01
+- Act 3: Block
 - ...
 
 ## Table of Contents
@@ -73,6 +74,22 @@ After replacing, for example, would be something like:
 }
 ```
 However, sometimes, you would also need to include "<>" in some code, but don't worry about this! There would also be sample code for you to refer and check your own. 
+
+## Boxes
+
+The guide uses different boxes for different purposes. For example:
+
+!!! task "What You Need To DO"
+    This blue box tells what you actually need to do in Activties.
+
+!!!concept "Concept"
+    This green box introduces concepts/definitions.
+
+!!!warning "Warning"
+    This orange box warns you of something
+
+!!!tip
+    This cyan box gives tips for you
 
 ------
 

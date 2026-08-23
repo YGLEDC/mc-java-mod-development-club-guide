@@ -1,4 +1,3 @@
-# Act 3: Tool
+# Act 4: Tool
 
 > This activity is currently being planned.
-

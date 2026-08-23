@@ -78,9 +78,10 @@ nav:
   - Activities:
       - Overview: 03-activities/index.md
       - "Act 1: Item": 03-activities/01-item.md
-      - "Act 2: Block": 03-activities/02-block.md
-      - "Act 3: Tool": 03-activities/03-tool.md
-      - "Act 4: Entity - Mob": 03-activities/04-entity-mob.md
+      - "Act 2: Item Features 01": 03-activities/02-item-features-01.md
+      - "Act 3: Block": 03-activities/03-block.md
+      - "Act 4: Tool": 03-activities/04-tool.md
+      - "Act 5: Entity - Mob": 03-activities/05-entity-mob.md
 
   - Dictionary:
       - Overview: 04-dictionary/index.md

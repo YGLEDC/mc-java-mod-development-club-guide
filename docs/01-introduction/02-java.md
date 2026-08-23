@@ -28,6 +28,95 @@ Usually, your source code are stored in files with a suffix `.java`.
 
 An example file: `Hello.java`
 
+## Data Types & Variables
+
+**Data Types** describe the type of data of a piece of information, which is usually a **variable**.
+
+Programs need to remember information, such as a player's name, the number of items, or whether a block is glowing. In Java, each piece of information has a **data type**. A data type tells Java what kind of value it is.
+
+For example, `10` is a whole number, `2.5` is a decimal number, and `"Diamond"` is text (String). Java treats these values differently, so we need to use the correct data type for each one.
+
+### Variables
+
+A **variable** is a named place that stores a value. You can think of it as a container labeled in different Data Types:
+
+```java
+int itemCount = 10;
+```
+
+This line has three important parts:
+
+- `int` is the **data type**.
+- `itemCount` is the **variable name**.
+- `10` is the **value** stored in the variable.
+
+Creating a variable is called **declaring** it. Giving the variable its first value is called **initializing** it. The `=` symbol assigns the value on its right to the variable on its left.
+
+Variable names should describe the information they store. Java variable names usually use **camelCase**, where the first word begins with a lowercase letter and each following word begins with a capital letter, such as `playerName` or `maximumHealth`.
+
+### Primitive Data Types
+
+Java has eight basic data types called **primitive types**. These types store simple values:
+
+| Data Type | Stores | Example |
+| --- | --- | --- |
+| `int` | Whole numbers | `int blockCount = 64;` |
+| `double` | Decimal numbers | `double attackSpeed = 1.6;` |
+| `float` | Decimal numbers with less precision | `float hardness = 3.5F;` |
+| `long` | Very large whole numbers | `long worldSeed = 123456789L;` |
+| `boolean` | Either `true` or `false` | `boolean isGlowing = true;` |
+| `char` | One character | `char grade = 'A';` |
+| `byte` | Small whole numbers | `byte lightLevel = 15;` |
+| `short` | Medium-sized whole numbers | `short durability = 250;` |
+
+> You will use `int`, `double`, `float`, and `boolean` often. Do not worry about memorizing every type right now.
+
+### Reference Data Types
+
+Java also has **reference types**, which refer to something called **Objects** (you will know more about objects below).
+
+`String`, a type used to store text, is a common example:
+
+```java
+String itemName = "Diamond Pickaxe";
+```
+
+> Notice that text in a `String` uses double quotation marks, while a single `char` uses single quotation marks.
+
+```java
+String mobName = "Creeper";
+char firstLetter = 'C';
+```
+
+You will see and use different types of **Object** while making Minecraft mods.
+
+### Changing a Variable
+
+After a variable has been declared, you can use its name to read or change its value:
+
+```java
+int itemCount = 10;
+itemCount = 11;
+```
+
+The variable still has to hold the same type of data. For example, Java will not let you store text inside an `int` variable. For example:
+
+```java
+int itemCount = "eleven"; // Error: "eleven" is text, not an int
+```
+
+### Constants
+
+Sometimes a value should not change. Adding the keyword `final` creates a **constant**, which can only be assigned once:
+
+```java
+final int MAX_STACK_SIZE = 64;
+```
+
+Constant names are usually written with capital letters and underscores. Constants are useful for fixed information such as a maximum stack size or a tool's base durability.
+
+> You don't need to memorize those keywords or structures yet. You only need to know that a **data type** describes a kind of value, and a **variable** gives that value a name so your program can remember and use it.
+
 ## Function
 
 **Functions** are re-usable sets of instructions. In other words, it is a written method / task, and you can call the function to use it.
@@ -80,15 +169,17 @@ flowchart LR
 
 > See below for more info.
 
-## Class & Object & Attribute & Method
+## Components of OOP
+
+There are four main components in OOP: **Class**, **Object**, **Attribute**, and **Method**.
 
 **Class** is a template / blueprint used to create **Objects** who have different properties called **Attributes** and different behaviors called **Methods**
 
 For example, a class is like a blueprint for creating a specific type of car. The blueprint says, each car should have 4 wheels, a car engine, windows. Therefore, each car the factory produces following this blueprint, is called an **Object** of this **Class**.
 
-But each car should have a color, a model, etc. They are **Attributes** (features / properties). 
+But each car should have a color, a model, etc (features/properties). They are **Attributes**. 
 
-Each car should be able to turn right, turn left, and speed up. This is called a **Method** (function).
+Each car should be able to turn right, turn left, and speed up. This is called a **Method** (which is a function).
 
 This is how it looks like in Java:
 
@@ -320,7 +411,7 @@ We will follow the following naming conventions in our development:
 - **Methods(funcions) / variables** : camelCase (e.g., registerItem)
 - **Mod Package Name** : lowercase (e.g., com.ygledc.icecream)
 - **Java package** : lowercase (or lowercase with underscores) (e.g., icecream)
-- **Minecraft item ID** : lowercase with underscores (e.g., ice_cream_ingot)
+- **Minecraft item path** : lowercase with underscores (e.g., ice_cream_ingot)
 - **Constant** : uppercase with underscores (e.g., ICE_CREAM_INGOT)
 
 > Don't worry if you don't understand some of the terms in the convention yet, feel free to go back here after you learn the terms, and need to name them.

@@ -8,3 +8,12 @@ document.addEventListener("click", async (event) => {
     await diagram.requestFullscreen();
   }
 });
+
+document.addEventListener("fullscreenchange", () => {
+  const diagram = document.fullscreenElement;
+  if (!diagram?.classList.contains("mermaid")) return;
+
+  requestAnimationFrame(() => {
+    diagram.scrollTo({ top: 0, left: 0 });
+  });
+});
