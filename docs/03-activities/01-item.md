@@ -4,6 +4,8 @@
 
 > Act 1 would be a heavy-content activity. If you are a complete beginner, you will see many new concepts and definitions here, so it is recommended to take your pace slow, or join the Activity Party for Act 1.
 
+> Everything is hard at the beginning. After Act 1, you will have a basic mindset of Mod Development!
+
 > If you feel stuck, it is recommended to reach out for help in GC or Discord. You can also make good use of your search engine!
 
 ## Objective & Introduction
@@ -21,15 +23,14 @@ Thanks to Rosa, we will use her art resource "Ice Cream Resource Pack" - `act1.p
 
 > The art resources are only for club guide and play use. If you want to use them for other purposes, you should check out [Club Artist Contributions](../06-credits/02-club-artist-contributions.md) for specifc permissions of each author.
 
-If you decide to create your own, read the Art Resource Requirement for Act 1 below.
+You can also create your own, which is recommended if you want your final product to become a personal comprehensive mod! Read the Art Resource Requirement for Act 2 below.
+
 
 ## Art Resource Requirement
 
-- It should be a texture for an Ingredient, smelt from a raw ore (you will create the raw ore in Act 3), such as a Minecraft's Iron Ingot.
+- It should be a texture for an Ingredient (ingot/gem), smelt from a raw ore (you will create the raw ore in Act 2), such as a Minecraft's Iron Ingot:
 
 ![iron ingot](../assets/images/activities/act-1/02.png "iron ingot"){ .pixel-art width="150" }
-
-> Minecraft's iron ingot
 
 > You don't need to follow a ingot-like shape
 
@@ -48,15 +49,15 @@ If you decide to create your own, read the Art Resource Requirement for Act 1 be
 !!! warning
     Your Mod ID and Package Name should be unique to prevent conflicts with other mods.
 
-> Below is the configuration we use for Act 1.
+> Below is the configuration I use for Act 1.
 
 > - Mod Name: Ice Cream
 - Mod ID: ice-cream
 - Package Name: com.ygledc.icecream
-- **Version: 1.21.1** (fixed)
-- **Advance Option: Check only `Data Generation` and `Split client and common sources`** (fixed)
+- Version: `1.21.1` (fixed)
+- Advance Option: Check only `Data Generation` and `Split client and common sources` (fixed)
 
-> This template would be used for many activities!
+> This project folder would be used for many activities!
 
 !!! task "Open the project in IntelliJ"
     Unzip the downloaded file, then open the project folder in IntelliJ.
@@ -83,7 +84,7 @@ Minecraft is a typical example of **Object Oriented Programming**, which consist
 
 Therefore, if you want an item to exist in Minecraft, you would need to create a **Class** for your item.
 
-Recall that you want your mod's Java code to be placed in `src/main/java/modpackagename/`, which in this case is `src/main/java/com/ygledc/icecream/` because my package name is `com.ygledc.icecream`.
+Recall that you want your mod's Java code to be placed in `src/main/java/modpackagename/`, which in my case is `src/main/java/com/ygledc/icecream/` because my package name is `com.ygledc.icecream`.
 
 In order to create a new class for your items, you would like to create a new **java file** that holds your class.
 
@@ -125,9 +126,9 @@ The way to create an organizer class:
 !!! task "Create `ModItems.java`"
     Create a Java file named `ModItems.java` in `src/main/java/modpackagename/`.
 
-    > This could be done by clicking the directory where you want to add the java file to (which is `src/main/java/modpackagename/`). The directory should be in blue highlight after selecting; Then, click the `+` icon on top of your left panel; choose `file`, and write `ModItems.java`.
+    > This could be done by first clicking the directory where you want to add the java file to (which is `src/main/java/modpackagename/`). The directory should be in blue highlight after selecting; Then, click the **"+"** icon on top of your left panel; choose **file**, and write `ModItems.java`.
 
-    > you follow the naming convention here, that is why it is named `ModItems`
+    > you follow the naming convention here, that's why it is `ModItems`
 
     > `.java` tells IntelliJ that it is a java file
 
@@ -141,7 +142,7 @@ The way to create an organizer class:
     //This should be package name that you've entered for your mod in the template generator!!!
     ```
 
-Recall that anything under `src/main/java`, which is the **source root**, is considered inside your main java package. Correspondingly, your `ModItems.java` is located in src/main/java/modpackagename/.
+Recall that anything under `src/main/java`, which is the **source root**, is considered inside your main java package. Correspondingly, your `ModItems.java` is located in `src/main/java/modpackagename/`.
 
 **The idea here is, any java file inside the main package, should have a package declaration that tells java where the file is at.**
 
@@ -150,12 +151,13 @@ My package declaration would be:
 package com.ygledc.icecream;
 ```
 
-Then, you need to create a class. Here is how you create the class:
-```java
-public class ModItems{
+!!!task "Create a class"
+    Then, you need to create a class. Here is how you create the class for `ModItems.java`:
+    ```java
+    public class ModItems{
 
-}
-```
+    }
+    ```
 Here are the components:
 
 - `public`: means that this class is accessible in other classes (other code can use this class)
@@ -166,8 +168,8 @@ Here are the components:
 
 You should realize that your `ModItems.java` on the left panel becomes `ModItems` with a blue icon `C`. This is normal, and it means that you've successfully created a top-level class!
 
-!!!tip
-    Shortcut: you can quickly create a Java file with package declaration and its top-level class by choosing `Java Class` when clicking the `+` icon. It would automatically generate the package declaration and the top-level class.
+!!!tip "Shortcut"
+    You can quickly create a Java file with package declaration and its top-level class by choosing **Java Class** when clicking the **"+"** icon. It would automatically generate the package declaration and the top-level class.
 
 ### Import Classes 01
 
@@ -257,11 +259,11 @@ new <ClassName>(<argument1>, <argument2>, ...);
 
     Attributes are represented by **variables**, like
     ```java
-        int x = 1;
+    int x = 1;
 
-        String color = "red";
+    String color = "red";
 
-        int damage = 10;
+    int damage = 10;
     ```
     The Path:
 
@@ -281,7 +283,7 @@ What each components are:
 - `arguments` : The values you want your object's attributes to have; the type and number of arguments accepted is defined by the constructor
 > a semicolon `;` is needed at the end!
 
-So, if we follow the original template to create a Minecraft Item from the Item class:
+So, if we follow the original template to create a Minecraft Item from the Item class, and assign it to a variable:
 ```java
 Item IceCreamIngot = new Item(<parameters>);
 ```
@@ -298,23 +300,29 @@ Well the first problem we have to solve is to find a way to register the item.
 
 Remember we've imported the class `Registry`. It has the **Method** we needed to register an item.
 
-`Registry` class has a method called `register`, when you use it, it takes in **3 arguments** and returns back (give) you the **registered object**. To use that method, specifically to register an Item object to `Registries.ITEM`, you do the folllowing:
+`Registry` class has a method called `register`, when you use it, it takes in **3 arguments** and returns (output) the **registered object**. To use that method, specifically to register an Item object to `Registries.ITEM`, you do the folllowing:
 ```java
-Registry.register(Registries.ITEM, <EntryPointClass>.id(<ModItemPathName>), <ItemObject>)
+Registry.register(Registries.ITEM, <EntryPointClass>.id(<item_path>), <ItemObject>);
 //this is the specific form of registering an item to Registries.ITEM
 //Registries.ITEM comes from the imported Registries class
 
 
-Registry.register(<Registries.XXX>, <EntryPointClass>.id(<PathName>), <XXXObject>)
+Registry.register(<Registries.XXX>, <EntryPointClass>.id(<item-path>), <XXXObject>);
 //This is the general form if you'are interested
 ```
+The 3 arguments are `<Registries.XXX>`, `<EntryPointClass>.id(<item-path>)`, and `<XXXObject>`.
+
+* `Registries.XXX` : What registries do you want to add your item to?
+* `EntryPointClass` : Your mod's entry point class. This is already generated based on your **Mod Name** without spaces. You can also see yours on the left panel under `src/main/java/modpackagename/`
+* `item_path` : Your Item's path. You will create it later.
+* `XXXObject`: The object that stands for your item.
 
 !!!concept
     **Dot Notation**
 
     1. This is something you use to use a method outside of your class. In this case, you've imported Registry class, but in order to use its method, you have to use a dot `.` between the class and its method.
 
-        Similarly, you also use dot notation to access the attribute `ITEM` of `Registries` class
+        Similarly, you also use dot notation to access the attribute `ITEM` of `Registries` class like `Registries.ITEM`.
 
         However, if you are calling the attribute or method **inside** their class, you don't need Dot Notation.
 
@@ -334,17 +342,17 @@ How to make them into one line?
 Notice that the `register` method accepts an argument `ItemObject`. We can actually instantiate the Item object here! So, in my case, it is possible to do something like:
 
 ```java
-Registry.register(Registries.ITEM, IceCream.id("ice_cream_ingot"), new Item(Item.Settings()))
+Registry.register(Registries.ITEM, IceCream.id("ice_cream_ingot"), new Item(new Item.Settings()));
 
-//Don't worry about what Item.Settings() mean here for now;
-//but you should know that it acts as the argument that the Constructor of Item class accepts
+//Don't worry about what Item.Settings() mean here right now;
+//but you should know that Item.Settings() acts as the argument that the Constructor of Item class accepts
 ```
 
-Obviously, this is one line of code. However, it is too messy! If someone reads your code and sees this, do you think they would understand what your code means? Likely, if assumimg they are pros.
+Obviously, this is one line of code. However, it is very long! And hard to read. Imagine you have to do this for every item in the future...This is not effective.
 
-Is there a way to organize this code into a clearer way?
+Is there a way to organize this code into a clearer way for repetitive use?
 
-If you remember the purposes of functions (methods), one purpose is that they are created for **repetitive use**. You will definitely not want to do a bunch of code every time you create a new item for your mod. Therefore, why not create a **method** for your ModItems class?
+If you remember the purposes of functions (methods), they are created for **readibility** and **repetitive use**. You will definitely not want to do a bunch of code every time you create a new item for your mod. Therefore, why not create a **method** for your ModItems class?
 
 And each time you want to create a new item, just call (use) this function. This would also just be one line of code, but more likely readable.
 
@@ -354,7 +362,7 @@ And each time you want to create a new item, just call (use) this function. This
     ```java
     private static Item register(String name, Item item) {
 
-    return Registry.register(Registries.ITEM, <EntryPointClass>.id(name), item);
+        return Registry.register(Registries.ITEM, <EntryPointClass>.id(name), item);
 
     }
     ```
@@ -363,12 +371,14 @@ What each component do:
 
 - `private` : means that this method is accessible only in this class (other code cannot use this method)
 - `static` : means that this method belongs to the Class rather than the Objects of this class, so you can call the method using the Class name
-- `Item` : The *return* type of this function (method). You will know what return means in below.
+- `Item` : The *return* type of this function (method).
+> "return" means what does this function output.
 - `register` : the name of this function (method)
 - `String name` : You want the 1st argument to be a `String`;`name` is the parameter, which is used to store the 1st argument; you can use it inside the function like a variable
 - `Item item`: You want the 2nd argument to be an `Item` object; `item` is the parameter name, which is used to store the 2nd argument; you can use it inside the function like a variable
+- `EntryPointClass` : Your entry-point class! This is already generated by the template. It's usually generated based on your **Mod Name** without spaces! See yours on the left panel under `src/main/java/modpackagename/` 
 - `{}` : determine where the code of this function should be in
-- `return`: the key word you use to return a value. In this case, you return a registered object, which is returned (given) by the `register` method of `Registry`
+- `return`: the key word you use to output a value. In this case, you return a registered object, which is returned by the `register` method of `Registry`
 > In math, we have functions with outputs and inputs, such as f(x) = x, h(x) = x+3, y = x + 9, etc. The code after *return* is the output, the y value of the function; The arguments are like the input, the x values of the function.
 
 If you notice something interesting here, we are actually creating a method that uses another method from another class. That is doable, and in this case it is doable because you've imported Registry, and the `register` method itself is `public`.
@@ -388,11 +398,13 @@ In my case, the code would look like this:
 ```java
 private static Item register(String name, Item item) {
 
-return Registry.register(Registries.ITEM, IceCream.id(name), item);
+    return Registry.register(Registries.ITEM, IceCream.id(name), item);
 
 }
 
-//because my Entry-Point Class is named `IceCream`; see yours on the left panel under src/main/java/modpackagename/
+//because my Entry-Point Class is named "IceCream"; 
+//see yours on the left panel under src/main/java/modpackagename/
+//it is usually generated by the template based on your Mod Name without spaces
 ```
 
 Now you have the method!!! We can finally start to create and register the item.
@@ -413,15 +425,15 @@ What each component mean:
 - `final` : keyword; means that this variable can only be assigned once!
 > suppose you have a variable `x`; if `x` is not `final`, you can assign different values to it after its first assign:
 ```java
-    int x = 1; //now x is 1
-    int x = 2; //now x is 2
-    int x = 3; //now x is 3
+int x = 1; //now x is 1
+int x = 2; //now x is 2
+int x = 3; //now x is 3
 ```
 > the reason you use `final` is because you know that this variable would, and should only refer to the exact Item object you assign to it.
 - `Item` : the type of variable, which matches what you are assigning to the variable
 > If you want to assign an integer to a variable named x, it would be something like:
 ```java
-    int x = 1;
+int x = 1;
 ```
 - `ITEM_NAME` : The name you want this variable (reference variable: a variable name that represents the Item you create) to be; the naming follows the [**Constant Convention**](../01-introduction/02-java.md#java-convention)
 - `=` : the assign operator
@@ -451,17 +463,17 @@ import net.minecraft.registry.Registry;
 
 public class ModItems {
 
-public static final Item ICE_CREAM_INGOT = register("ice_cream_ingot",
-        new Item(new Item.Settings()));
+    public static final Item ICE_CREAM_INGOT = register("ice_cream_ingot",
+            new Item(new Item.Settings()));
 
-//I just enter a new line here for easier viewing; keeping them in one line is fine
+    //I just enter a new line here for easier viewing; keeping them in one line is fine
 
 
-private static Item register(String name, Item item) {
+    private static Item register(String name, Item item) {
 
-return Registry.register(Registries.ITEM, IceCream.id(name), item);
+        return Registry.register(Registries.ITEM, IceCream.id(name), item);
 
-}
+    }
 
 }
 ```
@@ -499,24 +511,24 @@ What each class can offer:
 `ItemGroupsEvent` class has a `static` (belongs to the class) method named `modifyEntriesEvent`. Below is the implementation of the method that adds your item to the **Ingredients Tab** in creative inventory:
 
 ```java
-ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {entries.add(<ITEM_NAME>)});
+ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {entries.add(<ITEM_NAME>);});
 
 //probably too long to fit your screen
 
 ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
         .register(entries -> {
-            entries.add(<ITEM_NAME>)
-            });
+            entries.add(<ITEM_NAME>);
+        });
 
 //This is the same, but looks more organized; you just make a new line.
 
 
 ItemGroupEvents.modifyEntriesEvent(ItemGroups.<INVENTORY_TAB/GROUP>)
-                .register(entries -> {
-                    entries.add(<ITEM_NAME1>);
-                    entries.add(<ITEM_NAME2>);
-                    ...
-                });
+        .register(entries -> {
+            entries.add(<ITEM_NAME1>);
+            entries.add(<ITEM_NAME2>);
+            ...
+        });
 
 //If you are interested, this is the general form for adding multiple items to ItemGroups.<INVENTORY_TAB/GROUP>;
 //in this case, ItemGroups.<INVENTORY_TAB/GROUP> would be ItemGroups.INGREDIENTS
@@ -564,10 +576,10 @@ If so, why not utilize it? We can actually put the two methods into one! It woul
 
     ```java
     public static void initialize() {
-    ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
-                    .register(entries -> {
-                        entries.add(<ITEM_NAME>);
-                    });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
+                .register(entries -> {
+                    entries.add(<ITEM_NAME>);
+                });
     }
     ```
 
@@ -590,12 +602,12 @@ what some components mean:
 In my code, I would do something like this:
 
 ```java
-    public static void initialize() {
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
-                .register(entries -> {
-                    entries.add(ICE_CREAM_INGOT);
-                });
-    }
+public static void initialize() {
+    ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
+            .register(entries -> {
+                entries.add(ICE_CREAM_INGOT);
+            });
+}
 ```
 
 That is all the code for `ModItems`!!!
@@ -624,9 +636,9 @@ public class ModItems {
 
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
-                .register(entries -> {
-                    entries.add(ICE_CREAM_INGOT);
-                });
+            .register(entries -> {
+                entries.add(ICE_CREAM_INGOT);
+            });
     }
 
 }
@@ -677,27 +689,27 @@ import org.slf4j.LoggerFactory;
 
 
 public class IceCream implements ModInitializer {
-	public static final String MOD_ID = "ice-cream";
+    public static final String MOD_ID = "ice-cream";
 
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    // This logger is used to write text to the console and the log file.
+    // It is considered best practice to use your mod id as the logger's name.
+    // That way, it's clear which mod wrote info, warnings, and errors.
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	@Override
-	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+    @Override
+    public void onInitialize() {
+        // This code runs as soon as Minecraft is in a mod-load-ready state.
+        // However, some things (like resources) may still be uninitialized.
+        // Proceed with mild caution.
 
-		ModItems.initialize();
+        ModItems.initialize();
 
-		LOGGER.info("Hello Fabric world!");
-	}
+        LOGGER.info("Hello Fabric world!");
+    }
 
-	public static Identifier id(String path) {
-		return Identifier.of(MOD_ID, path);
-	}
+    public static Identifier id(String path) {
+        return Identifier.of(MOD_ID, path);
+    }
 }
 ```
 > all imports here may be shown as `import ...` in IntelliJ
@@ -802,7 +814,7 @@ New concept here!
 
     ```json
     {
-    "item.<mod-id>.<item_path>": "<Name of Item That You Want to Appear In English Language>"
+        "item.<mod-id>.<item_path>": "<Name of Item That You Want to Appear In English Language>"
     }
     ```
 
@@ -817,7 +829,7 @@ What some components mean:
 Here is mine:
 ```json
 {
-"item.ice-cream.ice_cream_ingot": "Ice Cream Ingot"
+    "item.ice-cream.ice_cream_ingot": "Ice Cream Ingot"
 }
 ```
 
@@ -842,10 +854,10 @@ Here is mine:
 
     ```json
     {
-      "parent": "minecraft:item/generated",
-      "textures": {
-        "layer0": "<mod-id>:item/<item_path>"
-      }
+        "parent": "minecraft:item/generated",
+        "textures": {
+            "layer0": "<mod-id>:item/<item_path>"
+        }
     }
     ```
 
@@ -861,10 +873,10 @@ What some components mean:
 Here is mine:
 ```json
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "ice-cream:item/ice_cream_ingot"
-  }
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "ice-cream:item/ice_cream_ingot"
+    }
 }
 ```
 

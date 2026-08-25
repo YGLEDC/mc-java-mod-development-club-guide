@@ -60,7 +60,7 @@ flowchart LR
 
 ## Replacement "<...>"
 
-There would be many code templates for you in **Activities**. Usually, the guide uses "<>" sign to tell you where to replace something. For example:
+There would be many code templates for you in **Activities**. Usually, the guide uses "<>" sign to tell you where to replace something of your own. For example:
 
 ```json
 {
@@ -73,7 +73,7 @@ After replacing, for example, would be something like:
 "item.ice-cream.ice_cream_ingot": "Ice Cream Ingot"
 }
 ```
-However, sometimes, you would also need to include "<>" in some code, but don't worry about this! There would also be sample code for you to refer and check your own. 
+However, sometimes, you would also need to include "<>" in some code, but don't worry about this! We will specify if needed, and there are also my sample code for you to refer and check your own. 
 
 ## Boxes
 

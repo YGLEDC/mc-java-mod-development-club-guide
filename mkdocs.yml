@@ -85,6 +85,12 @@ nav:
 
   - Dictionary:
       - Overview: 04-dictionary/index.md
+      - Java Knowledge: 04-dictionary/01-java-knowledge.md
+      - JSON Knowledge: 04-dictionary/02-json-knowledge.md
+      - Minecraft Facts: 04-dictionary/03-minecraft-facts.md
+      - Modding Reference:
+          - Overview: 04-dictionary/modding-reference/index.md
+          - Status Effects: 04-dictionary/modding-reference/status-effects.md
 
   - Helpful Links:
       - Overview: 05-helpful-links/index.md

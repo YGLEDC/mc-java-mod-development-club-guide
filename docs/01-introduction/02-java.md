@@ -397,6 +397,14 @@ flowchart LR
     
     Try search "How to check your processor architecture" in the browser if are not sure
 
+## Comment
+
+(placeholder)
+
+## Semicolon
+
+(placeholder)
+
 ## Java Convention
 
 There are some conventions (rules that communities follows) for java programming which can help you build a good habit.
