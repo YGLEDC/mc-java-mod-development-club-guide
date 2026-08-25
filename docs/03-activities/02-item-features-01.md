@@ -611,6 +611,11 @@ This command would launch a temporary Minecraft (a Minecraft development client)
 
     You can switch to survival mode by pressing **"T"** to open the chat window, and type in `/gamemode survival`. Sprint for a while to decrease your hunger bar, and see how your edible item restores it!
 
+![demo1](../assets/images/activities/act-2/demo1.png "demo1"){ width="425" }
+![demo2](../assets/images/activities/act-2/demo2.png "demo2"){ width="425" }
+
+> Status Effects that are **Level 1** or greater than **Level 10** do not show Roman Numerals.
+
 That is all for Act 2.
 
 ## Mermaid Workflow
