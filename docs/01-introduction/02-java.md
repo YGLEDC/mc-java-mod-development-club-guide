@@ -175,6 +175,10 @@ There are four main components in OOP: **Class**, **Object**, **Attribute**, and
 
 **Class** is a template / blueprint used to create **Objects** who have different properties called **Attributes** and different behaviors called **Methods**
 
+> * **Attributes** that belong to a class (*static*) are called **Static Fields**, or **Class Variables**
+* Creating an **Object** is called **Instantiation**
+* Methods are **functions** of the **Class** or its **Object**
+
 For example, a class is like a blueprint for creating a specific type of car. The blueprint says, each car should have 4 wheels, a car engine, windows. Therefore, each car the factory produces following this blueprint, is called an **Object** of this **Class**.
 
 But each car should have a color, a model, etc (features/properties). They are **Attributes**. 

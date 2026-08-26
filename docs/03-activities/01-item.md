@@ -12,7 +12,7 @@
 
 You will know how to create a basic item in Minecraft through this activity!
 
-Specifically, we will create an **Ingredient** for our mod, similar to iron ingot.
+Specifically, you will create an **Ingredient** (ingot/gem) for you mod, similar to iron ingot.
 
 Thanks to Rosa, we will use her art resource "Ice Cream Resource Pack" - `act1.png` for this activity. This is a texture of an **Ice Cream Ingot**!
 
@@ -34,7 +34,7 @@ You can also create your own, which is recommended if you want your final produc
 
 > You don't need to follow a ingot-like shape
 
-- Must be at least `16 x 16` **Pixel Grid** size, with **Transparent Background**. You can increase the resolution by 2 each time. Acceptable resolutions are: `16x16`, `32x32`, `64x64`, `128x128`, etc. We recommend `16x16` or `32x32` for Act 1.
+- Must be at least `16 x 16` **Pixel Grid** size, with **Transparent Background**. You can increase the resolution by 2 each time. Acceptable resolutions are: `16x16`, `32x32`, `64x64`, `128x128`, etc. We recommend `16x16` for Act 1.
 
 - Must be a **PNG** file.
 
@@ -302,20 +302,31 @@ Remember we've imported the class `Registry`. It has the **Method** we needed to
 
 `Registry` class has a method called `register`, when you use it, it takes in **3 arguments** and returns (output) the **registered object**. To use that method, specifically to register an Item object to `Registries.ITEM`, you do the folllowing:
 ```java
-Registry.register(Registries.ITEM, <EntryPointClass>.id(<item_path>), <ItemObject>);
+Registry.register(Registries.ITEM, <EntryPointClass>.id(<String item_path>), <ItemObject>);
+
 //this is the specific form of registering an item to Registries.ITEM
 //Registries.ITEM comes from the imported Registries class
 
+Registry.register(Registries.ITEM,
+    <EntryPointClass>.id(<String item_path>),
+    <ItemObject>);
 
-Registry.register(<Registries.XXX>, <EntryPointClass>.id(<item-path>), <XXXObject>);
+//this is equivalent to the top
+//but better formatting for readability
+
+
+Registry.register(<Registries.REGISTRIES>,
+    <EntryPointClass>.id(<String item_path>),
+    <ObjectType Object>);
+
 //This is the general form if you'are interested
 ```
-The 3 arguments are `<Registries.XXX>`, `<EntryPointClass>.id(<item-path>)`, and `<XXXObject>`.
+The 3 arguments for the general form are `<Registries.REGISTRIES>`, `<EntryPointClass>.id(String <item-path>)`, and `<ObjectType Object>`.
 
-* `Registries.XXX` : What registries do you want to add your item to?
+* `Registries.REGISTRIES` : What registries do you want to add your item to? (e.g., Registries.ITEM)
 * `EntryPointClass` : Your mod's entry point class. This is already generated based on your **Mod Name** without spaces. You can also see yours on the left panel under `src/main/java/modpackagename/`
-* `item_path` : Your Item's path. You will create it later.
-* `XXXObject`: The object that stands for your item.
+* `item_path` : Your Item's path. You will create it later. It needs to be a `String` data type.
+* `ObjectType Object`: The object that stands for your item. Needs to be an `ObjectType` that macthes your Object. For example, an Item Object that is an `Item`.
 
 !!!concept
     **Dot Notation**
@@ -331,6 +342,8 @@ The 3 arguments are `<Registries.XXX>`, `<EntryPointClass>.id(<item-path>)`, and
         - You do `register(...)` if you are calling the method inside `Registry` class
 
         - You do `Registry.register(...)` if you are calling the method outside `Registry` class
+
+        - In ` <EntryPointClass>.id(<item_path>)`, you call the `id()` method of your `EntryPointClass` with `.`. The method accepts a **String** as argument.
 
     2. You can also use Dot Notation to do something called **Method Chaining**. It acts like a connector between different methods and functions that make them in one line, like a "chain" (you will see an example of this in this activity)
 
@@ -348,9 +361,9 @@ Registry.register(Registries.ITEM, IceCream.id("ice_cream_ingot"), new Item(new 
 //but you should know that Item.Settings() acts as the argument that the Constructor of Item class accepts
 ```
 
-Obviously, this is one line of code. However, it is very long! And hard to read. Imagine you have to do this for every item in the future...This is not effective.
+Obviously, this is one line of code. However, it is very long and hard to read.
 
-Is there a way to organize this code into a clearer way for repetitive use?
+Imagine you have to do this for every item in the future...This is not effective. Is there a way to organize this code into a clearer way for repetitive use?
 
 If you remember the purposes of functions (methods), they are created for **readibility** and **repetitive use**. You will definitely not want to do a bunch of code every time you create a new item for your mod. Therefore, why not create a **method** for your ModItems class?
 
@@ -415,7 +428,7 @@ HOWEVER, we need to create a holder, which is a variable, that holds it. Remembe
     Assign the item to a variable—an attribute of `ModItems`—using the method you defined. Place this code inside the `ModItems` class, either above or below the method:
 
     ```java
-    public static final Item <ITEM_NAME> = register("<item_path>", new Item(new Item.Settings()));
+    public static final Item <ITEM_VAR_NAME> = register(<String item_path>, new Item(new Item.Settings()));
     ```
 
 What each component mean:
@@ -435,17 +448,17 @@ int x = 3; //now x is 3
 ```java
 int x = 1;
 ```
-- `ITEM_NAME` : The name you want this variable (reference variable: a variable name that represents the Item you create) to be; the naming follows the [**Constant Convention**](../01-introduction/02-java.md#java-convention)
+- `ITEM_VAR_NAME` : The name you want this variable to be; the naming follows the [**Constant Convention**](../01-introduction/02-java.md#java-convention)
 - `=` : the assign operator
 - `register(...)` : you call the method that you just defined! It returns the Item object. Since they are in the same `ModItems` class, you don't need to use dot notation.
-- `item_path` : The path of your item, which would be part of your item's ID; the naming follows the [**Minecraft Item ID Convention**](../01-introduction/02-java.md#java-convention)
+- `<String item_path>` : The path of your item, which would be part of your item's ID; It needs to be a **String**; the naming follows the [**Minecraft Item ID Convention**](../01-introduction/02-java.md#java-convention)
 !!!concept "Item ID"
     - A Minecraft Diamond has an ID that looks like this: `minecraft:diamond_ore`. For mods, it follows the format `mod-id:item_path`.
 
     - My mod ID is `ice-cream`, and if my `item_path` is `ice_cream_ingot`, my item's ID would be `ice-cream:ice_cream_ingot`.
 
     - In Minecraft, you can use commands to give you items with their IDs!!!
-- `new Item.Settings()` : this creates an object of the `Setting` class in the `Item` class, using the standard format of instantiating an object
+- `new Item.Settings()` : this creates an object of the `Item.Settings` class, which is the `Setting` class in the `Item` class, using the standard format of instantiating an object
 > This is a perfect example of nested classes; `Item` class is the top-level class, so it can have sub classes like `Setting`. A Setting Object contains all the configurations, or sets of attributes, that is needed for an `Item` object. So you don't have to do listing like parameter1, parameter2, etc.
 
 My code would be like this:
@@ -863,12 +876,12 @@ Here is mine:
 
 What some components mean:
 
-- `parent` : the key; tells Minecraft which model this item's model is based on
-- `minecraft:item/generated` : the value; refers to the existing model for items in Minecraft
-- `textures` : the key; tells Minecraft what texture you want to apply to the model
-- `layer0` : the key (in a value of a key); refers to the first/main layer of the model, since a regular item only needs `layer0`
-- `<mod-id>:item/<item_path>` : the value; tells Minecraft which item you are applying the texture to, and the texture (png file) is located in *src/main/resources/assets/mod-id/textures/item/*
-> We will create the texture and item directory later!
+- `"parent"` : the key; tells Minecraft which model this item's model is based on
+- `"minecraft:item/generated"` : the value; refers to the existing model for items in Minecraft
+- `"textures"` : the key; tells Minecraft what texture you want to apply to the model
+- `"layer0"` : the key (in a value of a key); refers to the first/main layer of the item model, since a regular item only needs `layer0`
+- `"<mod-id>:item/<item_path>"` : the value; tells Minecraft which item you are applying the texture to, and the texture (png file) is located in `src/main/resources/assets/mod-id/textures/item/`
+> We will create the `textures/item` directory level later!
 
 Here is mine:
 ```json
@@ -955,23 +968,10 @@ Now, after a successful build, we will run a temporary Minecraft to test our mod
 This command would launch a temporary Minecraft (a Minecraft development client) with your mod.
 
 !!! task "Verify the completed item"
-    Create a new world—or enter the world from **Checkpoint and Test 01**—in **Creative Mode**. Open your inventory and search for your item's name. You should now see the completed item with its texture.
+    Create a new world—or enter the world from **Checkpoint and Test 01**—in **Creative Mode**. Open your inventory and search for your item's name. You should now see the completed item with its model and texture.
 
 ![demo1](../assets/images/activities/act-1/finish_act1_1.png "demo1"){ width="425" }
 ![demo2](../assets/images/activities/act-1/finish_act1_2.png "demo2"){ width="425" }
-
-------
-
-Nice!
-
-That is all for Act1.
-
-You can check [Dictionary](../04-dictionary/index.md) to search and review for any important concepts or definitions.
-
-!!! warning
-    Do NOT delete your work for Act 1. Activities are designed to develop a full mod with multiple elements, so most activities in the future are based on the previous one.
-
-    It is recommended to make a copy as backup, and one way is to use GitHub.
 
 ## Mermaid Workflow
 
@@ -991,3 +991,17 @@ flowchart TB
     I --> J[7. Build and test the completed item]
     J --> K([Act 1 complete])
 ```
+
+---
+
+Nice!
+
+That is all for Act1.
+
+You can check [Dictionary](../04-dictionary/index.md) to search and review for any important concepts or definitions.
+
+!!! warning
+    Do NOT delete your work for Act 1. Activities are designed to develop a full mod with multiple elements, so most activities in the future are based on the previous one.
+
+    It is recommended to make a copy as backup, and one way is to use GitHub.
+

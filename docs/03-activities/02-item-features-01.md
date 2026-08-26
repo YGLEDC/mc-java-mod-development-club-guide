@@ -44,7 +44,7 @@ You should prepare two textures:
 - A food item that you imagine can be smelt from your Act 1 Item (gem/ingot)
 > I know this sounds weird. For example, ice cream ingot can be smelt to ice cream burnt! Use your imagination...
 
-Must be at least `16 x 16` **Pixel Grid** size, with **Transparent Background**. You can increase the resolution by 2 each time. Acceptable resolutions are: `16x16`, `32x32`, `64x64`, `128x128`, etc. We recommend `16x16` or `32x32` for Act 2.
+Must be at least `16 x 16` **Pixel Grid** size, with **Transparent Background**. You can increase the resolution by 2 each time. Acceptable resolutions are: `16x16`, `32x32`, `64x64`, `128x128`, etc. We recommend `16x16` for Act 2.
 
 Must be a **PNG** file.
 
@@ -616,8 +616,6 @@ This command would launch a temporary Minecraft (a Minecraft development client)
 
 > Status Effects that are **Level 1** or greater than **Level 10** do not show Roman Numerals.
 
-That is all for Act 2.
-
 ## Mermaid Workflow
 
 A mermaid visualization for the general workflow.
@@ -641,3 +639,17 @@ flowchart TB
     N --> L
     M -- Yes --> O([Act 2 complete])
 ```
+
+---
+
+Nice!
+
+That is all for Act 2.
+
+You can check [Dictionary](../04-dictionary/index.md) to search and review for any important concepts or definitions.
+
+!!! warning
+    Do NOT delete your work for Act 2. Activities are designed to develop a full mod with multiple elements, so most activities in the future are based on the previous one.
+
+    It is recommended to make a copy as backup, and one way is to use GitHub.
+
