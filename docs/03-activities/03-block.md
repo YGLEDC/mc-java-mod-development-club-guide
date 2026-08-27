@@ -2,7 +2,7 @@
 
 > Act 3 uses your work from Act 2
 
-> Learn to mod your first block, add recipies to your items, and get exposed to Minecraft's generation system!
+> Learn to mod your first blocks and prepare them for Minecraft's loot and generation systems!
 
 > This is a heavy-content activity, and it is recommended to join Act 3 Activity Party.
 
@@ -242,20 +242,20 @@ Now, we need to instantate the block and create its static field using our `regi
 
 However, its constructor is used differently. You normally create a `AbstractBlock.Settiings` object by using its `create` method or `copy` method:
 ```java
-new AbstractBlock.Settings.create()
-new AbstractBlock.Settings.copy(Blocks.STONE) //copy the setting of an existing block
+AbstractBlock.Settings.create()
+AbstractBlock.Settings.copy(Blocks.STONE) //copy the setting of an existing block
 ```
 
 I would like my Ice Cream Ore to have the same settings as an **Iron Ore**, so I do:
 ```java
-new AbstractBlock.Settings.copy(Blocks.IRON_ORE)
+AbstractBlock.Settings.copy(Blocks.IRON_ORE)
 ```
 Then you will follow the normal procedure of instantiating the object and assigning it to a variable, which is the static field (attribute of class).
 
 !!!task "Create your block"
     Create your block following the template for a `Block`, copying settings of Iron Ore:
         ```java
-        public static final Block <BLOCK_VAR_NAME> = register(<String block_path>,
+        public static final Block <BLOCK_VAR_NAME> = register("<block_path>",
                 new Block(AbstractBlock.Settings.copy(Blocks.IRON_ORE)));
 
             //you can copy another block if you want
@@ -388,7 +388,7 @@ You should be able to see your block but in a black-and-purple missing texture p
 For a basic block, different than a basic item, you need **4** resources.
 
 ### Lang JSON
-Find your `en_us.json` under `src/main/resources/assets/mod-id/lang/`, and add a new JSON object for your **Block**:
+Find your `en_us.json` under `src/main/resources/assets/mod-id/lang/`, and add a new key-value pair for your **Block** to the existing JSON object:
 ```json
 "block.<mod-id>.<block_path>": "<Block Displayed Name>"
 ```
@@ -597,6 +597,3 @@ You can check [Dictionary](../04-dictionary/index.md) to search and review for a
     Do NOT delete your work for Act 3. Activities are designed to develop a full mod with multiple elements, so most activities in the future are based on the previous one.
 
     It is recommended to make a copy as backup, and one way is to use GitHub.
-
-
-

@@ -80,17 +80,23 @@ nav:
       - "Act 1: Item": 03-activities/01-item.md
       - "Act 2: Item Features 01": 03-activities/02-item-features-01.md
       - "Act 3: Block": 03-activities/03-block.md
-      - "Act 4: Tool": 03-activities/04-tool.md
+      - "Act 4: World Gen, Loot Tables & Recipes": 03-activities/04-world-gen-loot-tables-recipes.md
       - "Act 5: Entity - Mob": 03-activities/05-entity-mob.md
 
   - Dictionary:
       - Overview: 04-dictionary/index.md
       - Java Knowledge: 04-dictionary/01-java-knowledge.md
       - JSON Knowledge: 04-dictionary/02-json-knowledge.md
-      - Minecraft Facts: 04-dictionary/03-minecraft-facts.md
       - Modding Reference:
           - Overview: 04-dictionary/modding-reference/index.md
+          - Minecraft Facts: 04-dictionary/modding-reference/minecraft-facts.md
           - Status Effects: 04-dictionary/modding-reference/status-effects.md
+      - Activity Templates:
+          - Overview: 04-dictionary/activity-templates/index.md
+          - Act 1 Template: 04-dictionary/activity-templates/act-1-template.md
+          - Act 2 Template: 04-dictionary/activity-templates/act-2-template.md
+          - Act 3 Template: 04-dictionary/activity-templates/act-3-template.md
+          - Act 4 Template: 04-dictionary/activity-templates/act-4-template.md
 
   - Helpful Links:
       - Overview: 05-helpful-links/index.md

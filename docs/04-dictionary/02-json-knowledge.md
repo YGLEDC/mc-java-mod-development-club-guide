@@ -32,14 +32,17 @@ A JSON **array** uses square brackets to store an ordered list:
 
 ## JSON Value Types
 
-| Type | Example |
-| --- | --- |
-| String (text) | `"ruby"` |
-| Number | `64` or `3.5` |
-| Boolean | `true` or `false` |
-| Object | `{ "key": "value" }` |
-| Array | `["ruby", "diamond"]` |
-| Empty value | `null` |
+| Type | Example | Minecraft example |
+| --- | --- | --- |
+| String (text) | `"ruby"` | An item ID such as `"examplemod:ruby"` |
+| Number (whole number/integer) | `64` or `200` | Recipe `cookingtime`, which must use `200` rather than `200.0` |
+| Number (decimal) | `3.5` or `0.7` | Recipe `experience`, such as `0.7` |
+| Boolean | `true` or `false` | A setting that can be enabled or disabled |
+| Object | `{ "key": "value" }` | A recipe's `result` object |
+| Array | `["ruby", "diamond"]` | A tag's list of `values` |
+| Empty value | `null` | An intentionally empty value, when supported |
+
+JSON itself calls both `200` and `0.7` **numbers**. However, Minecraft gives each key an expected data type. If Minecraft expects a whole-number integer, such as for recipe `cookingtime`, write `200` without a decimal point. If the key accepts a decimal number, such as recipe `experience`, a value like `0.7` is valid.
 
 ## Syntax Rules
 

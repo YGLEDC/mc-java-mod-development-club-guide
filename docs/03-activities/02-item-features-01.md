@@ -161,14 +161,14 @@ Make sure you follow the below instructions! The indicated change and some new c
     }
     ```
 
-You might notice the weird trailing comma "**,**" after each key-value pairs except the last one. Here is the new concept:
+You might notice the comma "**,**" after each key-value pair except the last one. Here is the new concept:
 
 !!! concept "JSON Objects"
     **JSON Objects**
 
-    JSON Object is like dictionary, which is a key-value pair in the format `"key":"value"`.
+    A JSON object is similar to a dictionary. It is the complete structure enclosed by curly braces `{ }`, and it can contain multiple key-value pairs in the format `"key": value`.
 
-    JSON Objects are separated by comma, therefore, you usually don't need a comma after the last JSON Object.
+    The key-value pairs inside an object are separated by commas. Do not put a comma after the final pair.
 
 My example:
 ```json
@@ -342,7 +342,7 @@ In 1.21.1 Fabric (Yarn), the main FoodComponent **Builder** methods are:
 | Builder Methods (DataType parameterName) | Effect | Example |
 | --- | --- | --- |
 | `nutrition(int nutrition_value)` | determines hunger points restored | `nutrition(6)` |
-| `saturationModifier(float saturationModifier)` | determines saturationModifer | `saturationModifier(0.6f)` |
+| `saturationModifier(float saturationModifier)` | determines saturation modifier | `saturationModifier(0.6f)` |
 | `alwaysEdible()` | can be eaten even when full | `alwaysEdible()` |
 | `snack()` | make it quicker to eat | `snack()` |
 | `statusEffect(StatusEffectInstance effect, float chance)` | a chance to apply a status effect after eaten | `statusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 200, 0), 1.0f)` |
@@ -365,7 +365,7 @@ Some facts to know:
     ```java
     public static final FoodComponent <FOOD_COMPONENT_NAME> = new FoodComponent.Builder()
         .nutrition(<int Nutrition_Value>)
-        .saturationModifer(<float Saturation_Modifier>)
+        .saturationModifier(<float Saturation_Modifier>)
         .alwaysEdible()
         .build();
     ```
@@ -458,7 +458,7 @@ new StatusEffectInstance(
     ```java
     public static final FoodComponent <FOOD_COMPONENT_NAME> = new FoodComponent.Builder()
         .nutrition(<int Nutrition_Value>)
-        .saturationModifer(<float Saturation_Modifier>)
+        .saturationModifier(<float Saturation_Modifier>)
         .statusEffect(
                 new StatusEffectInstance(
                         StatusEffects.<EFFECT_NAME>,
@@ -478,7 +478,7 @@ You can chain another  `statusEffect(...)` method to your food component's build
 ```java
 public static final FoodComponent <FOOD_COMPONENT_NAME> = new FoodComponent.Builder()
     .nutrition(<int value>)
-    .saturationModifer(<float value>)
+    .saturationModifier(<float value>)
     .statusEffect(
             new StatusEffectInstance(
                     StatusEffects.<EFFECT_NAME>,
@@ -505,14 +505,14 @@ public static final FoodComponent <FOOD_COMPONENT_NAME> = new FoodComponent.Buil
                     <int Amplifier>
                     ), <float chance>)
     .nutrition(<int value>)
-    .saturationModifer(<float value>)
+    .saturationModifier(<float value>)
     .statusEffect(
             new StatusEffectInstance(
                     StatusEffects.<EFFECT_NAME>,
                     <int Duration_In_Ticks>,
                    <int Amplifier>
                     ), <float chance>)
-    alwaysEdible()
+    .alwaysEdible()
     .build();
 ```
 > This should work the same.
@@ -531,7 +531,7 @@ public static final FoodComponent ICE_CREAM_BURNT_COMPONENT = new FoodComponent.
                 new StatusEffectInstance(StatusEffects.REGENERATION,
                         200,
                         0), 1.0f)
-        alwaysEdible()
+        .alwaysEdible()
         .build();
 ```
 
@@ -652,4 +652,3 @@ You can check [Dictionary](../04-dictionary/index.md) to search and review for a
     Do NOT delete your work for Act 2. Activities are designed to develop a full mod with multiple elements, so most activities in the future are based on the previous one.
 
     It is recommended to make a copy as backup, and one way is to use GitHub.
-

@@ -8,7 +8,13 @@ word or file.
 
 - [Java Knowledge](01-java-knowledge.md) : Java syntax and programming terms
 - [JSON Knowledge](02-json-knowledge.md) : JSON rules and structure
-- [Minecraft Facts](03-minecraft-facts.md) : Minecraft and Fabric facts
-- [Modding Reference](modding-reference/index.md) : Reusable templates, methods, etc.
+- [Modding Reference](modding-reference/index.md) : Minecraft and Fabric concepts, patterns, and methods
+    - [Minecraft Facts](modding-reference/minecraft-facts.md)
+    - [Status Effects](modding-reference/status-effects.md)
+- [Activity Templates](activity-templates/index.md):
+    - [Act 1 Template](activity-templates/act-1-template.md)
+    - [Act 2 Template](activity-templates/act-2-template.md)
+    - [Act 3 Template](activity-templates/act-3-template.md)
+    - [Act 4 Template](activity-templates/act-4-template.md)
 
 It is also recommended to use your search engine!

@@ -816,7 +816,7 @@ New concept here!
 
     Provides the data for your mod's items that Minecraft reads.
 
-    Data are stored in **key-value** pairs (format is `"key" : "value"`) like a Dictionary. This is called a JSON Object!
+    Data are stored in **key-value pairs** using the format `"key": value`, similar to entries in a dictionary. A JSON **object** is the complete structure enclosed by curly braces `{ }`, and it can contain zero, one, or many key-value pairs.
 
     These are configuration, not executable code.
 
@@ -879,7 +879,7 @@ What some components mean:
 - `"parent"` : the key; tells Minecraft which model this item's model is based on
 - `"minecraft:item/generated"` : the value; refers to the existing model for items in Minecraft
 - `"textures"` : the key; tells Minecraft what texture you want to apply to the model
-- `"layer0"` : the key (in a value of a key); refers to the first/main layer of the item model, since a regular item only needs `layer0`
+- `"layer0"` : a key inside the nested object that is the value of `"textures"`; it refers to the first/main layer of the item model, since a regular item only needs `layer0`
 - `"<mod-id>:item/<item_path>"` : the value; tells Minecraft which item you are applying the texture to, and the texture (png file) is located in `src/main/resources/assets/mod-id/textures/item/`
 > We will create the `textures/item` directory level later!
 
@@ -1004,4 +1004,3 @@ You can check [Dictionary](../04-dictionary/index.md) to search and review for a
     Do NOT delete your work for Act 1. Activities are designed to develop a full mod with multiple elements, so most activities in the future are based on the previous one.
 
     It is recommended to make a copy as backup, and one way is to use GitHub.
-
