@@ -566,6 +566,8 @@ Below is the general workflow:
 * Add resources for Deepslate Ore's BlockItem: **Models JSON**
 * Make a checkpoint and test if it works!
 
+![demo1](../assets/images/activities/act-3/demo1.png "demo1"){ width="425" }
+
 ## Mermaid Workflow
 
 A mermaid visualization for the general workflow.

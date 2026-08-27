@@ -130,7 +130,7 @@ The complete ore loot table is long because it supports Silk Touch, Fortune, and
     
     In this activity, we write the JSON manually so you can see and understand the actual loot-table structure first.
 
-#### Step 1: The Root of the Loot Table
+#### The Root of the Loot Table
 
 !!!task
 	Begin with this outer structure:
@@ -149,7 +149,7 @@ The complete ore loot table is long because it supports Silk Touch, Fortune, and
 
 Right now, `pools` is empty, so this table cannot drop anything.
 
-#### Step 2: Add a Loot Pool
+#### Add a Loot Pool
 
 A **pool** represents one group of possible results.
 
@@ -175,7 +175,7 @@ A **pool** represents one group of possible results.
 
 The pool now rolls once, but `entries` is still empty. We need to tell it what item it can choose.
 
-#### Step 3: Add the Raw Ore Entry
+#### Add the Raw Ore Entry
 
 An **entry** describes a possible result.
 
@@ -228,7 +228,7 @@ My item entry is:
 
 At this point, the loot table already works! Mining the block with a valid tool will drop one Raw Ore. The remaining structure adds special behavior.
 
-#### Step 4: Understand Conditions and Functions
+#### Understand Conditions
 
 Know some important tools can be attached to loot-table objects by **keys**:
 
@@ -276,7 +276,7 @@ Example of relationship:
 !!!concept "JSON Indentation"
 	JSON indentation helps you see which JSON objects belong inside which JSON arrays. If you add a condition or function at the wrong level, Minecraft may reject the file or apply it to a different part of the table.
 
-#### Step 5: Add Silk Touch with Alternatives
+#### Add Silk Touch with Alternatives
 
 In Minecraft, Silk Touch creates two possible paths:
 
@@ -382,7 +382,7 @@ They are called **entries** because they are actual entries in `"entries"`:
 
 > If you need help understanding, attend the Act 4 Party or watch the recordings for this part.
 
-#### Step 6: Add Fortune and Explosion Functions
+#### Add Functions
 
 We've completed the condition check for silk touch. Now, if silk touch is False, that means Minecraft reads the Raw Ore entry. For a mining action without silk touch, we also want to mention **fortune**, else your Block wouldn't drop any bonus when mining with fortune.
 
@@ -467,7 +467,7 @@ These functions belong only to the Raw Ore entry. Silk Touch should drop one Ore
 ```
 > THIS IS ONLY FOR SHOWING HOW IT LOOKS WITH CONDITION CHECK!
 
-#### Step 7: The Complete Stone Ore Loot Table
+#### The Complete Stone Ore Loot Table
 
 Now put the pieces together:
 
@@ -1473,6 +1473,14 @@ Command to switch to spectator:
 ```text
 /gamemode spectator
 ```
+
+![demo1](../assets/images/activities/act-4/demo1.png "demo1"){ width="425" }
+![demo2](../assets/images/activities/act-4/demo2.png "demo2"){ width="425" }
+![demo3](../assets/images/activities/act-4/demo3.png "demo3"){ width="425" }
+![demo4](../assets/images/activities/act-4/demo4.png "demo4"){ width="425" }
+![demo5](../assets/images/activities/act-4/demo5.png "demo5"){ width="425" }
+![demo6](../assets/images/activities/act-4/demo6.png "demo6"){ width="425" }
+> etc.
 
 !!!tip
 	Another techniqual way you can test your Placed Feature directly in a world with cheats enabled:
