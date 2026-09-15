@@ -4,7 +4,7 @@ copyright: Copyright &copy; YGLEDC — South Hills Modding Club
 theme:
   name: material
   logo: assets/club-logo/emblem-transparent.png
-  favicon: assets/club-logo/emblem-transparent.png
+  favicon: assets/club-logo/favicon.ico
   features:
     - navigation.footer
     - navigation.top
